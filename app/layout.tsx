@@ -1,12 +1,13 @@
 import { ClarityScript } from "@/components/clarity-script";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const noto = Noto_Sans_SC({
     subsets: ["latin"],
-    variable: "--font-inter"
+    variable: "--font-noto-sans-sc",
+    weight: ["400", "500", "700"]
 });
 
 export const metadata = {
@@ -21,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="zh-CN">
-            <body className={`${inter.variable} antialiased`}>
+            <body className={`${noto.variable} antialiased`}>
                 <main className="from-background to-muted flex min-h-screen flex-col justify-between bg-linear-to-b">{children}</main>
                 <ClarityScript />
                 <Toaster richColors />

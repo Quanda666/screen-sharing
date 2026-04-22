@@ -7,10 +7,10 @@ import { CustomRoomIdForm } from "./_components/custom-room-id-form";
 
 export default function Home() {
     return (
-        <div className="mx-auto flex max-w-4xl flex-col gap-8 px-4 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12">
             <div className="flex flex-col gap-4 text-center">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">立即共享您的屏幕</h1>
-                <p className="text-primary text-xl">创建房间，分享代码，即可在几秒钟内向观众进行演示。</p>
+                <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">立即共享您的屏幕</h1>
+                <p className="text-primary text-2xl">创建房间，分享代码，即可在几秒钟内向观众进行演示。</p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
                 <Card>
@@ -47,8 +47,8 @@ export default function Home() {
             </div>
             <Alert>
                 <AlertCircle />
-                <AlertTitle>备注</AlertTitle>
-                <AlertDescription>移动设备不支持屏幕共享。移动用户仍可以加入房间观看他人共享的屏幕。</AlertDescription>
+                <AlertTitle className="text-lg">备注</AlertTitle>
+                <AlertDescription className="text-base">移动设备不支持屏幕共享。移动用户仍可以加入房间观看他人共享的屏幕。</AlertDescription>
             </Alert>
         </div>
     );

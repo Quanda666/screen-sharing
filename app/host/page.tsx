@@ -108,8 +108,8 @@ export default function HostPage() {
     }
 
     return (
-        <div className="px-4 py-8">
-            <div className="mx-auto flex w-full max-w-2xl flex-col gap-8">
+        <div className="px-4 py-12">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-8">
                 <Button variant="outline" asChild>
                     <Link href="/" className="flex items-center self-start">
                         <ArrowLeft />
@@ -119,20 +119,20 @@ export default function HostPage() {
 
                 <Card>
                     <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
+                        <CardTitle className="flex items-center gap-2 text-2xl">
                             <Monitor />
                             您的屏幕共享房间
                         </CardTitle>
-                        <CardDescription>与他人分享您的房间代码或链接，让他们查看您的屏幕。如需同时共享音频，请确保使用 Chrome 或 Edge 浏览器，并选择“共享标签页”选项。</CardDescription>
+                        <CardDescription className="text-base">与他人分享您的房间代码或链接，让他们查看您的屏幕。如需同时共享音频，请确保使用 Chrome 或 Edge 浏览器，并选择“共享标签页”选项。</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-4">
                         <ShareOptions roomId={roomId} />
                         <div className="bg-muted/50 flex items-center justify-between rounded-lg p-4">
                             <div className="text-muted-foreground flex items-center gap-2">
-                                <Users className="size-4" />
-                                <span className="text-sm">当前观众人数</span>
+                                <Users className="size-5" />
+                                <span className="text-base">当前观众人数</span>
                             </div>
-                            <span className="text-lg font-semibold">{connections.length}</span>
+                            <span className="text-xl font-semibold">{connections.length}</span>
                         </div>
                         {activeStream && (
                             <Button variant="destructive" onClick={endSession} className="self-end">

@@ -87,7 +87,7 @@ export default function JoinPage() {
     }
 
     return (
-        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 py-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-12">
             <Button variant="outline" asChild>
                 <Link href="/" className="flex items-center self-start">
                     <ArrowLeft />
@@ -97,11 +97,11 @@ export default function JoinPage() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 text-2xl">
                         <Users />
                         加入房间
                     </CardTitle>
-                    <CardDescription>输入房间代码以加入并查看共享屏幕</CardDescription>
+                    <CardDescription className="text-base">输入房间代码以加入并查看共享屏幕</CardDescription>
                 </CardHeader>
                 <CardContent>
                     {!activeStream ? (
