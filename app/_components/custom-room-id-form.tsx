@@ -24,7 +24,7 @@ export function CustomRoomIdForm() {
             <CollapsibleContent className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
                     <Label htmlFor="custom-id">自定义房间 ID</Label>
-                    <Input id="custom-id" placeholder="my-presentation-room" value={customRoomId} onChange={(e) => setCustomRoomId(e.target.value)} />
+                    <Input id="custom-id" placeholder="我的演示房间" value={customRoomId} onChange={(e) => setCustomRoomId(e.target.value)} />
                     <span className="text-muted-foreground text-sm md:max-w-90">必须以字母或数字开头和结尾。中间允许使用连字符、下划线和空格。</span>
                 </div>
                 <Button variant="outline" disabled={!customRoomId} asChild={!!customRoomId}>

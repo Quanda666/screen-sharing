@@ -87,7 +87,7 @@ export default function JoinPage() {
     }
 
     return (
-        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 py-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-8">
             <Button variant="outline" asChild>
                 <Link href="/" className="flex items-center self-start">
                     <ArrowLeft />
