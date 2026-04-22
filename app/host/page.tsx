@@ -29,7 +29,7 @@ export default function HostPage() {
             });
 
             newPeer.on("error", (err) => {
-                toast.error("Failed to create room", {
+                toast.error("创建房间失败", {
                     description: err.message
                 });
                 router.push("/");
@@ -47,8 +47,8 @@ export default function HostPage() {
             };
         } catch (error) {
             console.error("Error initializing peer:", error);
-            toast.error("Failed to create room", {
-                description: "Please try again."
+            toast.error("创建房间失败", {
+                description: "请重试。"
             });
             router.push("/");
         }
@@ -58,11 +58,11 @@ export default function HostPage() {
         if (!peer) return;
 
         if (!activeStream && connections.length > 0) {
-            toast.info("New viewer connected", {
-                description: "Click to start sharing your screen.",
+            toast.info("新观众已连接", {
+                description: "点击开始共享您的屏幕。",
                 duration: Infinity,
                 action: {
-                    label: "Start Sharing",
+                    label: "开始共享",
                     onClick: async () => {
                         try {
                             const stream = await navigator.mediaDevices.getDisplayMedia({
@@ -72,8 +72,8 @@ export default function HostPage() {
                             setActiveStream(stream);
                         } catch (err) {
                             console.error("Screen sharing error:", err);
-                            toast.error("Screen sharing error", {
-                                description: "Failed to start screen sharing. Please try again."
+                            toast.error("屏幕共享错误", {
+                                description: "启动屏幕共享失败。请重试。"
                             });
                         }
                     }
@@ -101,8 +101,8 @@ export default function HostPage() {
         }
         setConnections([]);
         setRoomId("");
-        toast.info("Session ended", {
-            description: "Your screen sharing session has been terminated."
+        toast.info("会话已结束", {
+            description: "您的屏幕共享会话已终止。"
         });
         router.push("/");
     }
@@ -113,7 +113,7 @@ export default function HostPage() {
                 <Button variant="outline" asChild>
                     <Link href="/" className="flex items-center self-start">
                         <ArrowLeft />
-                        Back to Home
+                        返回首页
                     </Link>
                 </Button>
 
@@ -121,22 +121,22 @@ export default function HostPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Monitor />
-                            Your Screen Sharing Room
+                            您的屏幕共享房间
                         </CardTitle>
-                        <CardDescription>Share your room code or link with others to let them view your screen. To share audio as well, ensure you're using Chrome or Edge, and select the option to share a tab.</CardDescription>
+                        <CardDescription>与他人分享您的房间代码或链接，让他们查看您的屏幕。如需同时共享音频，请确保使用 Chrome 或 Edge 浏览器，并选择“共享标签页”选项。</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-4">
                         <ShareOptions roomId={roomId} />
                         <div className="bg-muted/50 flex items-center justify-between rounded-lg p-4">
                             <div className="text-muted-foreground flex items-center gap-2">
                                 <Users className="size-4" />
-                                <span className="text-sm">Current Viewers</span>
+                                <span className="text-sm">当前观众人数</span>
                             </div>
                             <span className="text-lg font-semibold">{connections.length}</span>
                         </div>
                         {activeStream && (
                             <Button variant="destructive" onClick={endSession} className="self-end">
-                                Stop sharing
+                                停止共享
                             </Button>
                         )}
                     </CardContent>

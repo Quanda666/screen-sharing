@@ -11,25 +11,25 @@ interface ShareOptionsProps {
 export function ShareOptions({ roomId }: ShareOptionsProps) {
     function copyRoomId() {
         navigator.clipboard.writeText(roomId);
-        toast.success("Room code copied!", {
-            description: "Share this code with others to let them join your room."
+        toast.success("房间代码已复制！", {
+            description: "将此代码分享给他人，让他们加入您的房间。"
         });
     }
 
     function copyShareableLink() {
         const shareableUrl = `${window.location.origin}/join?room=${roomId}`;
         navigator.clipboard.writeText(shareableUrl);
-        toast.success("Shareable link copied!", {
-            description: "Share this link with others to let them join your room directly."
+        toast.success("共享链接已复制！", {
+            description: "将此链接分享给他人，让他们直接加入您的房间。"
         });
     }
 
     return (
         <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
-                <p className="text-muted-foreground text-sm">Room Code</p>
+                <p className="text-muted-foreground text-sm">房间代码</p>
                 <code className="bg-muted flex w-full items-center justify-between gap-2 rounded-lg p-3 font-mono text-sm tracking-tight">
-                    {roomId || "Generating room code..."}
+                    {roomId || "正在生成房间代码..."}
                     <Button variant="ghost" size="sm" onClick={copyRoomId} disabled={!roomId} className="text-muted-foreground size-4">
                         <CopyIcon />
                     </Button>
@@ -41,14 +41,14 @@ export function ShareOptions({ roomId }: ShareOptionsProps) {
                     <span className="w-full border-t" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-background text-muted-foreground px-2">or</span>
+                    <span className="bg-background text-muted-foreground px-2">或</span>
                 </div>
             </div>
 
             <div className="flex flex-col gap-2">
-                <p className="text-muted-foreground text-sm">Shareable Link</p>
+                <p className="text-muted-foreground text-sm">共享链接</p>
                 <code className="bg-muted flex w-full items-center justify-between gap-2 rounded-lg p-3 font-mono text-sm tracking-tight">
-                    {roomId ? `${window.location.origin}/join?room=${roomId}` : "Generating link..."}
+                    {roomId ? `${window.location.origin}/join?room=${roomId}` : "正在生成链接..."}
                     <Button variant="ghost" size="sm" onClick={copyShareableLink} disabled={!roomId} className="text-muted-foreground size-4">
                         <CopyIcon />
                     </Button>

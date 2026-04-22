@@ -1,7 +1,7 @@
 {
     "name": "share-your-screen",
     "version": "0.1.0",
-    "description": "A real-time screen sharing application allowing users to easily share their screen with others with a simple code.",
+    "description": "一个实时屏幕共享应用程序，允许用户通过简单的代码轻松地与他人共享屏幕。",
     "private": true,
     "license": "MIT",
     "author": "Hin",

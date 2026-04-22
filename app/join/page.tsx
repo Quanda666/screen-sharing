@@ -40,8 +40,8 @@ export default function JoinPage() {
 
     function joinRoom(roomIdToJoin: string = roomId) {
         if (!roomIdToJoin.trim()) {
-            toast.error("Room code required", {
-                description: "Please enter a valid room code."
+            toast.error("需要房间代码", {
+                description: "请输入有效的房间代码。"
             });
             return;
         }
@@ -55,8 +55,8 @@ export default function JoinPage() {
             const connection = peer.connect(roomIdToJoin);
 
             connection.on("open", () => {
-                toast.success("Connected!", {
-                    description: "Waiting for host to share their screen..."
+                toast.success("已连接！", {
+                    description: "正在等待房主共享屏幕..."
                 });
             });
 
@@ -71,8 +71,8 @@ export default function JoinPage() {
                 setIsConnecting(false);
                 setRoomId("");
                 setActiveStream(null);
-                toast.error("Disconnected", {
-                    description: "The session has been ended."
+                toast.error("已断开连接", {
+                    description: "会话已结束。"
                 });
             });
         });
@@ -80,8 +80,8 @@ export default function JoinPage() {
         peer.on("error", (err) => {
             console.error("Peer error:", err);
             setIsConnecting(false);
-            toast.error("Connection failed", {
-                description: "Could not connect to the room. Please check the room code and try again."
+            toast.error("连接失败", {
+                description: "无法连接到房间。请检查房间代码并重试。"
             });
         });
     }
@@ -91,7 +91,7 @@ export default function JoinPage() {
             <Button variant="outline" asChild>
                 <Link href="/" className="flex items-center self-start">
                     <ArrowLeft />
-                    Back to Home
+                    返回首页
                 </Link>
             </Button>
 
@@ -99,16 +99,16 @@ export default function JoinPage() {
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                         <Users />
-                        Join a Room
+                        加入房间
                     </CardTitle>
-                    <CardDescription>Enter the room code to join and view the shared screen</CardDescription>
+                    <CardDescription>输入房间代码以加入并查看共享屏幕</CardDescription>
                 </CardHeader>
                 <CardContent>
                     {!activeStream ? (
                         <div className="flex flex-col gap-4">
-                            <Input placeholder="Enter room code" value={roomId} onChange={(e) => setRoomId(e.target.value)} disabled={isConnecting} />
+                            <Input placeholder="输入房间代码" value={roomId} onChange={(e) => setRoomId(e.target.value)} disabled={isConnecting} />
                             <Button className="w-full" onClick={() => joinRoom()} disabled={isConnecting || !roomId.trim()}>
-                                {isConnecting ? "Connecting..." : "Join Room"}
+                                {isConnecting ? "正在连接..." : "加入房间"}
                             </Button>
                         </div>
                     ) : (
