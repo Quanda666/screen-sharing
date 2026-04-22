@@ -7,9 +7,9 @@ import { CustomRoomIdForm } from "./_components/custom-room-id-form";
 
 export default function Home() {
     return (
-        <div className="mx-auto flex max-w-4xl flex-col gap-8 px-4 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8">
             <div className="flex flex-col gap-4 text-center">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">立即共享您的屏幕</h1>
+                <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-6xl">立即共享您的屏幕</h1>
                 <p className="text-primary text-xl">创建房间，分享代码，即可在几秒钟内向观众进行演示。</p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
