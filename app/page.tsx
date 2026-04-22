@@ -9,21 +9,21 @@ export default function Home() {
     return (
         <div className="mx-auto flex max-w-4xl flex-col gap-8 px-4 py-8">
             <div className="flex flex-col gap-4 text-center">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Share Your Screen Instantly</h1>
-                <p className="text-primary text-xl">Create a room, share the code, and start presenting to your audience in seconds.</p>
+                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">立即共享您的屏幕</h1>
+                <p className="text-primary text-xl">创建房间，分享代码，即可在几秒钟内向观众进行演示。</p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
                 <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Monitor />
-                            Start Sharing
+                            开始共享
                         </CardTitle>
-                        <CardDescription>Create a room and share your screen with others</CardDescription>
+                        <CardDescription>创建房间并与他人共享您的屏幕</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-4">
                         <Link href="/host">
-                            <Button className="w-full">Create Room</Button>
+                            <Button className="w-full">创建房间</Button>
                         </Link>
                         <CustomRoomIdForm />
                     </CardContent>
@@ -32,14 +32,14 @@ export default function Home() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <Users />
-                            Join a Room
+                            加入房间
                         </CardTitle>
-                        <CardDescription>Enter a room code to view someone's screen</CardDescription>
+                        <CardDescription>输入房间代码以查看他人的屏幕</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <Link href="/join">
                             <Button variant="outline" className="w-full">
-                                Join Room
+                                加入房间
                             </Button>
                         </Link>
                     </CardContent>
@@ -47,8 +47,8 @@ export default function Home() {
             </div>
             <Alert>
                 <AlertCircle />
-                <AlertTitle>Note</AlertTitle>
-                <AlertDescription>Screen sharing isn’t supported on mobile devices. Mobile users can still join a room to view screens shared by others.</AlertDescription>
+                <AlertTitle>备注</AlertTitle>
+                <AlertDescription>移动设备不支持屏幕共享。移动用户仍可以加入房间观看他人共享的屏幕。</AlertDescription>
             </Alert>
         </div>
     );

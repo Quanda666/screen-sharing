@@ -2,15 +2,17 @@ import { ClarityScript } from "@/components/clarity-script";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter"
+});
 
 export const metadata = {
-    title: "Screen Share - Share Your Screen Instantly",
-    description: "Share your screen instantly with anyone using a simple room code. No downloads or sign-ups required.",
-    keywords: ["screen sharing", "webrtc", "online screen share", "browser screen sharing", "free screen sharing", "share your screen", "share screen", "screen share"],
+    title: "屏幕共享 - 即时共享您的屏幕",
+    description: "使用简单的房间代码即可立即与任何人共享您的屏幕。无需下载或注册。",
+    keywords: ["屏幕共享", "webrtc", "在线屏幕共享", "浏览器屏幕共享", "免费屏幕共享", "共享您的屏幕", "共享屏幕", "屏幕分享"],
     other: {
         "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ""
     }
@@ -18,22 +20,9 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
-                <main className="from-background to-muted flex min-h-screen flex-col justify-between bg-linear-to-b">
-                    {children}
-                    <footer className="text-muted-foreground px-4 py-8 text-center text-sm">
-                        Built by{" "}
-                        <Link href="https://tonghohin.vercel.app" className="underline" target="_blank">
-                            Hin
-                        </Link>
-                        . The source code is available on{" "}
-                        <Link href="https://github.com/tonghohin/screen-sharing" className="underline" target="_blank">
-                            Github
-                        </Link>
-                        .
-                    </footer>
-                </main>
+        <html lang="zh-CN">
+            <body className={`${inter.variable} antialiased`}>
+                <main className="from-background to-muted flex min-h-screen flex-col justify-between bg-linear-to-b">{children}</main>
                 <ClarityScript />
                 <Toaster richColors />
             </body>
